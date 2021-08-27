@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>iConverge</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sidebar-themes.css">
+    <link rel="stylesheet" href="../css/form-style.css">
+
+    <!-- datatable link  -->
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+<style type="text/css">
+table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</style>
+</head>
+
+<body>
+    <div class="page-wrapper default-theme  bg1 toggled">
+        <span th:remove="tag" th:utext="${dataHtml}"></span>
+
+        
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid" style="padding: 0px; ">
+                <div class="title-bar"
+                    style="height: 90px; background-image: url(../img/bn.jpeg) !important;background-repeat: no-repeat;width: 100%;height: 100%;background-size: cover;">
+                    <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#"
+                        style="margin: 20px; background: #3ab54a;">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                            </svg></span>
+                    </a>
+                </div>
+                <div class="container" >
+                <div class="col-md-12">
+                <h2
+                    style="text-align: center; font-weight: bold; font-size: 20px; margin-bottom: 15px; ">
+                    Statement of Bill , Collection and Receivable against NESCO including SURCHARGE</h2>
+
+                    <h2
+                    style="text-align: center; font-weight: bold; font-size: 20px; margin-bottom: 15px; ">
+                   Since 2016-17</h2>
+
+
+                <table>
+                  <tr style="height: 30px;">
+                        <th rowspan="2" style="text-align: center;">Month/Year</th>
+                        <th colspan="3" style="text-align: center;">Billed unit(kwh)</th>
+                        <th colspan="3" style="text-align: center;">Billed Amount(tk)</th>
+                        <th rowspan="2" style="text-align: center;">Collected Amount(tk)</th>
+                        <th colspan="3" style="text-align: center;">Receivable(tk)</th>
+                        <!-- <th></th>
+                        <th></th> -->
+                        <!-- <th></th>
+                        <th></th> -->
+                        <!-- <th></th>
+                        <th></th> -->
+                    </tr>
+
+
+                    <tr style="height: 30px;">
+                        <th style="text-align: center;">Energy Unit</th>
+                        <th style="text-align: center;">PFC Unit</th>
+                        <th style="text-align: center;">Total Unit</th>
+                        <th style="text-align: center;">Energy Charge</th>
+                        <th style="text-align: center;">PFC Charge</th>
+                        <th style="text-align: center;">Total</th>
+                        <th style="font-size: 12px; text-align: center;">Arr(Energy Charge + PF Surcharge + PFC Charge</th>
+                        <th style="text-align: center;">Surcharge</th>
+                        <th>Total</th>
+                        <!-- <th></th> -->
+                        <!-- <th></th> -->
+                    </tr>
+
+
+                    <tr style="height: 30px;">
+                        <th>FY 16-17</th>
+                        <th>2485818323</th>
+                        <th>45756319</th>
+                        <th>2535574542</th>
+                        <th>12787322807</th>
+                        <th>234572353</th>
+                        <th>12861632245896</th>
+                        <th>5236912786</th>
+                        <th>5020678149</th>
+                        <th>861453278</th>
+                        <th>5312687464</th>
+                    </tr>
+
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+
+
+
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <tr style="height: 30px;">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                </table>
+
+            </div>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+
+    <script src="../js/main.js"></script>
+    <!-- datatable script  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>

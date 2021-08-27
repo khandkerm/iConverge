@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
+
+    <!--Data Table-->
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+
+    <!--script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+        $(function () {
+            $("#sidebar").load("sidebar.html");
+        });
+    </script>
+
+    <title>new</title>
+</head>
+
+<body>
+    <div id="sidebar"></div>
+    <!--Container Main start-->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12 col-md-12">
+                <div class="card shadow border">
+                    <div class="card-header text-center rounded" style="background-color: #094375">
+                        <div class="row">
+                            <div class="col textHover"
+                                style=" font-family: 'Encode Sans SC', sans-serif; color: white;">
+                                <h2><b>Form</b></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-row">
+                                <div class="col-md-4">
+                                    <label for="validationDefault04" style="color: black">Usage Cat Code</label>
+                                    <input id="" name="" class="form-control" required />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationDefault04" style="color: black">Usage Cat Name</label>
+                                    <input id="" name="" class="form-control" required />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationDefault04" style="color: black">Rec Status</label>
+                                    <select name="" class="form-control" id="">
+                                        <option value="">--</option>
+                                        <option value="">U</option>
+                                        <option value="">C</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="col-md-4">
+                                    <label style="color: black">Usage Type</label>
+                                    <select class="form-control" name="" id="">
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label style="color: black">Line Type</label>
+                                    <select class="form-control" name="" id="">
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label style="color: black">Area Code</label>
+                                    <select class="form-control" name="" id="">
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="validationDefault04" style="color: black">Status</label>
+                                    <div class="input-group-prepend">
+                                        <div class="input mt-2 ml-3">
+                                            <input type="checkbox" value="1" name="status" id="status" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <button class="btn btn-secondary btn-lg" id="center2" type="submit"
+                                    style="display: block; margin: auto">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Container Main end-->
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>iConverge</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sidebar-themes.css">
+    <link rel="stylesheet" href="../css/form-style.css">
+
+    <!-- datatable link  -->
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="page-wrapper default-theme  bg1 toggled">
+        <span th:remove="tag" th:utext="${dataHtml}"></span>
+
+        
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid" style="padding: 0px;">
+                <div class="title-bar"
+                    style="height: 90px; background-image: url(../img/bn.jpeg) !important;background-repeat: no-repeat;width: 100%;height: 100%;background-size: cover;">
+                    <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#"
+                        style="margin: 20px; background: #3ab54a;">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                            </svg></span>
+                    </a>
+                </div>
+                <div class="container pt-5 pb-5">
+                    <div class="card-container-holder">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-12">
+                                <div class="card-5">
+                                    <div class="card-heading">
+                                        <h2 class="text-center">Power Plant Info</h2>
+                                    </div>
+                                    <div class="card-body">
+
+						<form th:action="@{'/IC_POWER_PLANT_EDIT/'+ ${id}}" method="post" th:object="${powerPlantInsert}">
+							<div class="form-row">
+								<div class="col-md-3">
+									<label for="validationDefault04" style="color: black">Power Point codes</label>
+									<input id="powerPointCode" readonly th:value="${pp_code}" name="powerPointCode" class="form-control" required />
+								</div>
+								<div class="col-md-3">
+									<label for="validationDefault04" style="color: black">Power Point Name</label>
+									<input id="powerPointName" th:value="${pp_name}" name="powerPointName" class="form-control" required />
+								</div>
+								<div class="col-md-3">
+									<label for="validationDefault04" style="color: black">No of Unit</label>
+									<input id="noOfUnit" th:value="${on_of_unit}" name="noOfUnit" class="form-control" required />
+								</div>
+								<div class="col-md-3">
+									<label for="validationDefault04" style="color: black">Installen Capacity</label>
+									<input id="installenCapacity" th:value="${install_capacity}" name="installenCapacity" class="form-control" required />
+								</div>
+							</div>
+							<div class="form-row mt-4">
+
+								<div class="col-md-4">
+									<label style="color: black">Grid Name</label>
+									<select class="form-control" name="gridCode" id="gridCode">
+										<option disabled="disabled" selected="selected"  th:value="${grid_code}" th:text="${grid_name}"></option>
+										<option th:each="g : ${gridList}" th:value="${g.gridCode}" th:text="${g.gridName}" ></option>
+
+									</select>
+								</div>
+								<div class="col-md-4">
+									<label style="color: black">Owner Name</label>
+									<select class="form-control" name="ownerCode" id="ownerCode">
+										<option disabled="disabled" selected="selected" th:value="${owner_code}" th:text="${owner_name}"></option>
+										<option th:each="p : ${pPOwnerList}" th:value="${p.ownerCode}" th:text="${p.ownerName}" ></option>
+									</select>
+								</div>
+								<div class="col-md-4">
+									<label style="color: black">Gen Area Name</label>
+									<select class="form-control" name="genAreaCode" id="genAreaCode">
+										<option disabled="disabled" selected="selected" th:value="${gen_area_code}" th:text="${gen_area}"></option>
+										<option th:each="a : ${genArea}" th:value="${a.genAreaCode}" th:text="${a.genAreaName}" ></option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-row mt-4">
+								<div class="col-md-4">
+									<label style="color: black">Max Capacity</label>
+									<input id="maxCapacity" th:value="${max_capacity}" name="maxCapacity" class="form-control" required />
+								</div>
+								<div class="col-md-4">
+									<label style="color: black">Short Name</label>
+									<input id="shortName" th:value="${short_name}" name="shortName" class="form-control" required />
+								</div>
+								<div class="col-md-4">
+									<label for="validationDefault04" style="color: black">Status</label>
+									<div class="input-group-prepend">
+										<div class="input mt-12 ml-12">
+											<select id="status" name="status">
+                                              <option value="Y" selected>Yes</option>
+                                              <option value="N">No</option>
+                                          </select>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2 mt-4">
+									<button class="btn btn-secondary btn-lg" id="center2" type="submit">
+										Submit
+									</button>
+								</div>
+							</div>
+						</form>
+					
+				</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                        </div>
+
+                        <div class="row mt-5 pt-3">
+                            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title"> Power Plant Info</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                    <table id="table_id" class="table display table-bordered margin-top:10px"
+                        style="margin: 0 auto; width:100%;border: 2px solid black;width: 50%;border-collapse: collapse;">
+                      
+					<thead class="thead-dark">
+						<tr style="text-align: center;">
+							<th scope="col">Power Plant Code</th>
+							<th scope="col">Power Plant Name</th>
+							<th scope="col">Number of Unit</th>
+							<th scope="col">Installed Capacity</th>
+							<th scope="col">Max Capacity</th>
+							<th hidden scope="col">Grid Code</th>
+							<th scope="col">Grid Desc</th>
+							<th scope="col">Status</th>
+							<th hidden scope="col">Owner Code</th>
+							<th scope="col">Owner Name</th>
+							<th scope="col">Short Name</th>
+							<th hidden scope="col">Gen Area Code</th>
+							<th scope="col">Gen Area Name</th>
+							<th scope="col">Power point Id</th>
+							<th scope="col">Edit</th>
+							<th scope="col">Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="i : ${powerPlantList}" style="text-align: center;">
+							<td th:text="${i.ppCode}"></td>
+							<td th:text="${i.ppName}"></td>
+							<td th:text="${i.noOfUnit}"></td>
+							<td th:text="${i.installedCapacity}"></td>
+							<td th:text="${i.maxCapacity}"></td>
+							<td hidden th:text="${i.gridCode}"></td>
+							<td th:text="${i.gridDesc}"></td>
+							<td th:text="${i.status}"></td>
+							<td hidden th:text="${i.ownerCode}"></td>
+							<td th:text="${i.ownerName}"></td>
+							<td th:text="${i.shortName}"></td>
+							<td hidden th:text="${i.genAreaCode}"></td>
+							<td th:text="${i.genAreaName}"></td>
+							<td th:text="${i.ppId}"></td>
+							<td><a th:href="@{'/IC_POWER_PLANT_EDIT/'+ ${i.ppCode}}">Edit</a>
+							<td><a th:href="@{'/powerPointDelete/'+  ${i.ppCode}}">Delete</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+
+    <script src="../js/main.js"></script>
+    <!-- datatable script  -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });
+    </script>
+</body>
+
+</html>	

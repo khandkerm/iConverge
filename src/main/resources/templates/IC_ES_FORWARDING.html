@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>iConverge</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sidebar-themes.css">
+    <link rel="stylesheet" href="../css/form-style.css">
+    <link rel="stylesheet" href="../css/index.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- datatable link  -->
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+    <div class="page-wrapper default-theme  bg1 toggled">
+        <span th:remove="tag" th:utext="${dataHtml}"></span>
+
+        
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid" style="padding: 0px; ">
+                <div class="title-bar"
+                    style="height: 90px; background-image: url(../img/bn.jpeg) !important;background-repeat: no-repeat;width: 100%;height: 100%;background-size: cover;">
+                    <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#"
+                        style="margin: 20px; background: #3ab54a;">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                            </svg></span>
+                    </a>
+                </div>
+                <div class="container" >
+                <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12" style="text-align: center;">
+        <h5 class="headings"><b>BANGLADESH POWER DEVELOPMENT BOARD</b></h5>
+        <p class="mt-1"><b>EXECUTIVE SUMMARY</b></p>
+        <span class="centerSpan" style="text-decoration: underline;"><b>September.20</b></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-12">
+        <p class="paragraph" style="text-align: left;">In the month of <span>September.20 </span> the
+          netgeneration wa! <span>7,244.34</span> MKwh, sale of energy was 7,063 84 MKwh and BPDB's
+          distribution loss was <span>7,063 84</span> Generation, Import, System loss, Bill
+          collection.Consumerbilled, C/B &C/I Ratio, Accounts
+          receivable and activities of Magistrate Courts are summarized below :</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-12">
+        <p><b>1.0 GENERATION:</b></p>
+        <p><b>1.1 Energy Generation:</b></p>
+        <p>The Netenergygeneration ( including lpp, RPP, Imported & Others) during September'20 and August.20 were
+          <span>7,244.34</span> MKwh and <span>7,244.34</span> MKwh respectively. It was observed that net generation
+          increased by <span>37.07</span> MKwh from previous month. Gross energy generation, Sattion use, Net
+          generation, Imported energy and Energy purchase from IPP & RPP are tabulated below:
+        </p>
+        <table class="table mt-4" style="text-align: center;">
+          <tr>
+            <th rowspan="2">Month/FY</th>
+            <th colspan="3">BPDB Generation (MKwh)</th>
+            <th colspan="3">Net Generation (MKwh)</th>
+            <th rowspan="2">Imported (MKwh)</th>
+            <th rowspan="2">Renewable/Others (MKwh)</th>
+            <th rowspan="2">Total Net Generation (BPDB, IPP & RPP)</th>
+          </tr>
+          <tr>
+            <td>Gross Generation</td>
+            <td>Station Use</td>
+            <td>Net Generation</td>
+
+            <td>Joint Venture</td>
+            <td>IPP</td>
+            <td>Rental</td>
+          </tr>
+          <tr>
+            <th scope="row">FY: 2019-20</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">FY: 2020-21 (Upto <span>Sep'20</span>)</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"><span>September'20</span></th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"><span>September'19</span></th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row"><span>August'20</span></th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+      <p>*Including 265.30 MKwh non-grid generations</p>
+      <p><span class="mt-2"><b>1.2 Net Energy Generation (%) by Fuel Type and by Company/Utility:</b></span></p>
+      <p><b>1.2.1. Net Energygenerated bytype of fuel for <span>September'20</span>, FY: <span>2020-21 (Upto
+            Sep.20)</span>
+          &
+          FY: <span>2019-20</span> are shown below in pie chart </b>:</p>
+
+    </div>
+
+    <!-- Start: Chart1 -->
+    <div class="row mt-3">
+      <div class="col-lg-4 col-xl-4 col-md-4">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold" style="text-align: center;">Net Generatior<span> 7,244.34 MKwh
+                <br>
+                September'20
+              </span> </h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xl-4 col-md-4">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold " style="text-align: center;">Net Generatior<span> 7,244.34 MKwh
+                <br>
+                September'20
+              </span></h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-xl-4 col-md-4">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold" style="text-align: center;">Net Generatior<span> 7,244.34 MKwh
+                <br>
+                September'20
+              </span></h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: Chart -->
+
+    <div class="row mt-4">
+      <p><b>1.2.2. Net Energy generated (%) by BPDB/ Company is shown bellow in graph:</b></p>
+    </div>
+
+    <!-- Start: Chart1 -->
+    <div class="row mt-3">
+      <div class="col-lg-5 col-xl-5 col-md-5">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold" style="text-align: center;">Net Generatior<span> 7,244.34 MKwh
+                <br>
+                September'20
+              </span> </h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-xl-2 col-md-2"></div>
+      <div class="col-lg-5 col-xl-5 col-md-5">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold" style="text-align: center;">Net Generatior<span> 7,244.34 MKwh
+                <br>
+                September'20
+              </span></h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: Chart -->
+
+    <div class="row mt-4">
+      <p><b>1.3 Maximum Generation, Demat`d and Load Shading :</b></p>
+      <p>According to the Daily Data from Load Dispatch Center (LDC) maxim`im gerieration, Demand and Load Shading of
+        <span>August'20</span>, <span>August'20</span>,<span>August'20</span>
+      </p>
+    </div>
+    <table class="table mt-2" style="text-align: center;">
+      <tr>
+        <th rowspan="2">Description</th>
+        <th colspan="2"><span>Aug 20</span></th>
+        <th colspan="2"><span>Aug 20</span></th>
+        <th colspan="2"><span>Aug 20</span></th>
+
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td>MW</td>
+
+        <td>Date</td>
+        <td>MW</td>
+
+        <td>Date</td>
+        <td>MW</td>
+      </tr>
+      <tr>
+        <th scope="row">MaximiLm Generation</th>
+        <td></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr>
+        <th scope="row">Maximum Demand</th>
+        <td></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr>
+        <th scope="row">Maximum Demand</th>
+        <td></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+
+      </tr>
+    </table>
+  </div>
+
+  <!-- 1st page end  -->
+
+  <!-- 2nd page start  -->
+  <div class="container mt-4">
+    <div class="row mt-2">
+      <p><b>2.0 Energy Sale</b></p>
+      <p>2.1 Energy Sale :</p>
+      <p>Total energy sale has increasedby 4811 MKwh from previous month. Bulk energy sales of
+        <span>August'20</span>,
+        <span>August'20</span> and <span>August'20</span> are tabulated below : (Mkwh)
+      </p>
+    </div>
+
+    <table class="table mt-2" style="text-align: center;">
+      <tr>
+        <th>Description</th>
+        <th><span>Aug 20</span></th>
+        <th><span>Aug 20</span></th>
+        <th><span>Aug 20</span></th>
+        <th><span>Aug 20</span></th>
+        <th><span>Aug 20</span></th>
+
+      </tr>
+
+      <tr>
+        <th scope="row">DPDC</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+
+
+      </tr>
+      <tr>
+        <th scope="row">DESCO</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+
+
+      </tr>
+      <tr>
+        <th scope="row">WZPDCL</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+
+
+      </tr>
+      <tr>
+        <th scope="row">REB/PBSs</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">NESCO</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+
+      </tr>
+      <tr>
+        <th scope="row">BPBD Dist</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+
+      </tr>
+      <tr>
+        <th scope="row">Total Sale</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+    </table>
+
+    <div class="row mt-4">
+      <p><b>2.2 Share of energy sale (%)</b></p>
+      <p>Share of energy sale by Utiliq FY <span>2019-21</span>, FY: <span>2020-21 (Upto Sep'20)</span> and
+        <span>September'20</span> are shown below:
+      </p>
+    </div>
+
+    <!-- Start: Chart1 -->
+    <div class="row mt-3">
+      <div class="col-lg-6 col-xl-6 col-md-6">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold" style="text-align: center;">Utility wise Energy Sale
+              <span> 7,244.34
+                MKwh
+              </span>
+            </h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-xl-6 col-md-6">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold" style="text-align: center;">Utility wise Energy Sale
+              <span> 7,244.34
+                MKwh
+              </span>
+            </h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: Chart -->
+
+    <!-- Start: Chart1 -->
+    <div class="row mt-3">
+      <div class="col-lg-3 col-xl-3 col-md-3"></div>
+      <div class="col-lg-6 col-xl-6 col-md-6">
+        <div class="card shadow mb-4">
+          <div class="card-header justify-content-between align-items-center">
+            <h6 class="text-dark font-weight-bold" style="text-align: center;">Utility wise Energy Sale
+              <span> 7,244.34
+                MKwh
+              </span>
+            </h6>
+          </div>
+          <div class="card-body">
+            <div class="chart-area"><canvas
+                data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+            </div>
+            <div class="text-center small mt-4"><span class="mr-2"><i
+                  class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                  class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                  class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-xl-3 col-md-3"></div>
+    </div>
+    <!-- End: Chart -->
+
+    <div class="row mt-4">
+      <p><b>3.0 BIIIFD, COLLFCTION, C/B RATIO WITH COMPARISON</b></p>
+      <p>3.1 lltilities wise Bill, Collection and collection / Bill ratio for <span>August'20</span>,
+        <span>August'20</span>,<span>August'20</span> are shown below :
+      </p>
+    </div>
+
+    <table class="table mt-2" style="text-align: center;">
+      <tr>
+        <th rowspan="2">Utility</th>
+        <th colspan="4">BPDB Generation (MKwh)</th>
+        <th colspan="4">Net Generation (MKwh)</th>
+        <th colspan="4">Imported (MKwh)</th>
+      </tr>
+      <tr>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+
+      </tr>
+      <tr>
+        <th scope="row">BPBD Dist</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">WZPDCL</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">DPDC</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">DESCO</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">PBSs/REB</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">NESCO</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Total</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+    </table>
+  </div>
+  <!-- 2nd page end  -->
+
+  <!-- 3rd page start  -->
+  <div class="container mt-5">
+    <div class="row">
+      <p><b>3.2 Utility Wise C/B for FY: <span>2019-20</span>, FY: <span>2020-21 fupto Sep.20)</span> and
+          <span>Septemb</span> are show-n below in Bar Chart:</b>
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="myChart31"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myChart32"></canvas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <canvas id="myChart33"></canvas>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+    <!-- Start: Chart1 -->
+    <script>
+      var xValues2 = ["BPBD", "WZPDCL", "DPDC", "DESCO", "PBSs", "WZPDCL", "DPDC", "DESCO", "PBSs", "PBSs", "WZPDCL", "DPDC", "DESCO", "PBSs"];
+      var yValues2 = [5, 10, 30, 20, 40, 30, 35, 40, 50, 50, 55, 60, 65, 50];
+      var barColors = ["light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light"];
+
+      new Chart("myChart31", {
+        type: "bar",
+        data: {
+          labels: xValues2,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues2
+          }]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Utilitywisec/B(FY:2019-20)"
+          }
+        }
+      });
+
+      new Chart("myChart32", {
+        type: "bar",
+        data: {
+          labels: xValues2,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues2
+          }]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Utilitywisec/B(FY:2019-20)"
+          }
+        }
+      });
+
+      new Chart("myChart33", {
+        type: "bar",
+        data: {
+          labels: xValues2,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues2
+          }]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Utilitywisec/B(FY:2019-20)"
+          }
+        }
+      });
+    </script>
+    <!-- End: Chart -->
+
+    <div class="row mt-4">
+      <p><b>4.0 Energy lmpo].I, .Sale and System loss wi(h Comparison of BPDB's Diatribution :</b></p>
+      <p><b>4.1 BPDB's zone wise Import, Sale & Dist. System loss for FY: <span>2020-21
+            (Uptosep.20)</span>,<span>2020-21 (Uptosep.20)</span> :<span>2020-21 (Uptosep.20)</span> and
+          FY: <span>2020-21 (Uptosep.20)</span> are shown below :</b> </p>
+    </div>
+    <table class="table mt-4" style="text-align: center;">
+      <tr>
+        <th rowspan="2">BPDB Zones</th>
+        <th colspan="4">Energy Imported (MKwh)</th>
+        <th colspan="4">Energy Sold (MKwh)</th>
+        <th colspan="4">Dist. System Loss (%)</th>
+      </tr>
+      <tr style="font-weight: bold;">
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+
+      </tr>
+      <tr>
+        <th scope="row">Dist. Mymensingh</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Dist. Chittagong</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Dist Comilla</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Dist. Sylhet</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">GM Commercial</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">NESCO</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Power Station</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Total (BPDB Dist.)</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+    </table>
+    <div class="row mt-5">
+      <p><b> 4.2 BPDB zone wise Net Bill, Net Collection, Collection / Bill ratio and Collection / import ratio are
+          tabulated below</b></p>
+    </div>
+
+    <table class="table mt-2" style="text-align: center;">
+      <tr>
+        <th rowspan="2">BPDB Zones</th>
+        <th colspan="3">Net Billed Ant (MTk)</th>
+        <th colspan="3">Net Collected Ant (MTk)</th>
+        <th colspan="3">Colt/Bill (%)</th>
+        <th colspan="3">C/I Ratio (%)</th>
+      </tr>
+      <tr style="font-weight: bold;">
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+        <td><span>Sep'20</span></td>
+
+      </tr>
+      <tr>
+        <th scope="row">Dist. Mymensingh</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Dist. Chittagong</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Dist Comilla</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Dist. Sylhet</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">GM Commercial</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">NESCO</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Power Station</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+      <tr>
+        <th scope="row">Total (BPDB Dist.)</th>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+        <td><span></span></td>
+      </tr>
+    </table>
+  </div>
+  <!-- 3rd page end  -->
+
+  <!-- 4th page start  -->
+  <div class="container mt-5">
+    <div class="row">
+      <p style="text-align: center; text-decoration: underline;"><b>System Loss (%) Paltem ( BPDB Disc. ) From FY ;
+          2007-08 to FY: 2020-21 (Unto
+          Sep'20)</b></p>
+    </div>
+    <div class="row" style="margin-left: auto; margin-right: auto; display: block;">
+      <div class="col-md-12">
+        <canvas id="myChart20"></canvas>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <p style="text-align: center; text-decoration: underline;"><b>System Loss (%) Paltem ( BPDB Disc. ) From FY ;
+          2007-08 to FY: 2020-21 (Unto
+          Sep'20)</b></p>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="myChart21"></canvas>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <p><b>5.0 Transmission Loss Information :</b></p>
+      <p>Transmission Loss on.Net generation from FY ; <span>07-08 tc</span> FY: <span>07-08 tc</span> are shown in bar
+        graph as below :</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="myChart22"></canvas>
+      </div>
+    </div>
+
+    <script>
+      var xValues1 = ["BPBD", "WZPDCL", "DPDC", "DESCO", "PBSs", "WZPDCL", "DPDC", "DESCO", "PBSs", "PBSs", "WZPDCL", "DPDC", "DESCO", "PBSs"];
+      var yValues1 = [5, 10, 30, 20, 40, 30, 35, 40, 50, 50, 55, 60, 65, 50];
+      var barColors = ["light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light", "light"];
+
+      new Chart("myChart20", {
+          type: "bar",
+          data: {
+              labels: xValues1,
+              datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues1
+              }]
+          },
+          options: {
+              legend: { display: false },
+              title: {
+                  display: true,
+              }
+          }
+      });
+
+      new Chart("myChart21", {
+          type: "bar",
+          data: {
+              labels: xValues1,
+              datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues1
+              }]
+          },
+          options: {
+              legend: { display: false },
+              title: {
+                  display: true,
+              }
+          }
+      });
+
+      new Chart("myChart22", {
+          type: "bar",
+          data: {
+              labels: xValues1,
+              datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues1
+              }]
+          },
+          options: {
+              legend: { display: false },
+              title: {
+                  display: true,
+                  text: "Transmission Loss (%) on Net Generation"
+              }
+          }
+      });
+  </script>
+
+  </div>
+  <!-- 4th page end  -->
+
+  <!-- 5th page start-->
+  <div class="container mt-4">
+    <p style="text-align: center; text-decoration: underline;">System Loss (%) Paltem ( BPDB Disc. ) From FY ;
+      <span>2007-08</span> to
+      FY: <span>2007-08</span> <span> Upto (2007-08)</span>
+    </p>
+    </p>
+
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="myChart" style=" max-width: 1300px; max-height: 500px;"></canvas>
+      </div>
+    </div>
+
+    <p class="mt-5" style="text-align: center; text-decoration: underline;">BPDB Distribution c/l Ratio(%)
+      <span> Upto (2007-08)</span>
+    </p>
+
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="myChart1" style=" max-width: 1300px; max-height: 500px;"></canvas>
+      </div>
+    </div>
+
+    <script>
+      var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+      var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+      new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [{
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: yValues
+          }]
+        },
+        options: {
+          legend: { display: false },
+          scales: {
+            yAxes: [{ ticks: { min: 6, max: 16 } }],
+          }
+        }
+      });
+      new Chart("myChart1", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [{
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: yValues
+          }]
+        },
+        options: {
+          legend: { display: false },
+          scales: {
+            yAxes: [{ ticks: { min: 6, max: 16 } }],
+          }
+        }
+      });
+    </script>
+    <div class="row mt-4">
+      <p>6.0 CONSUMFR IN BPDB:</p>
+      <p><b>6.a. Bulk Consumer</b></p>
+      <p>Number of Bulk consumer in the month of <span>Sep,20</span> was <span>80</span> (DPDC, DESCO, WZPDCL,
+        NWPDCL & <span>80</span> no'.c PBS) No's. respectively & consumer billed was <span>100%</span> compared to
+        <span>100%</span> in the previous month.
+      </p>
+    </div>
+
+    <div class="row mt-4">
+      <p><b>6.b. Bulk Consumer</b></p>
+      <p>Number of Total Retail consumerand Active Retail in the month of <span>Sep,20</span> was <span>80</span> (DPDC,
+        DESCO, WZPDCL, NWPDCL & <span>80</span> no'.c PBS) No's. & consumer billed was <span>100%</span> compared to
+        <span>100%</span> in the previous month.
+      </p>
+    </div>
+
+    <div class="row mt-4">
+      <p>7.0 ACCOUNTS RECEIVABLE/OUTSTANDING BILL:</p>
+      <p><b>7.a. Bulk</b></p>
+      <p>The Accounts receivable ( Principle Amount ) from the bulk consumer at the end of the <span>september.20</span>
+        was <span>83,683.96</span> MTk. Acounts receivable (Principle Amount) from DESA were <span>83,683.96</span> MTk.
+        and DPDC were <span>83,683.96</span> MTk. tDPDC's equivalent to <span>3.08</span> months)</p>
+    </div>
+
+    <div class="row mt-4">
+      <p><b>7.b. Retail</b></p>
+      <p>The Accounts receivable ( Principle Amount ) from the Retail consumer of BPDB at the end of the
+        <span>september.20</span> was
+        <span>83,683.96</span> MTk. <span>3.08</span> months)
+      </p>
+    </div>
+
+    <div class="row mt-5" style="float: right;">
+      <p style="text-align: center;">(Badhan Chandra Bkash) <br> General Manager <br> Commercial Operation, BPDB, Dhaka
+      </p>
+
+    </div>
+
+  </div>
+  <!-- 5th page  end-->
+
+
+  <!-- 6th page start  -->
+  <div class="container" style="margin-top: 15%;">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="">Memo No. <span>27.11.0000.701.87.001.2020.271</span></p>
+        <p class="">Circulation:</p>
+      </div>
+      <div class="col-md-6">
+        <p style="text-align: right;">Dated: <span>29.10.2020</span></p>
+      </div>
+    </div>
+   
+    <div class="row mt-4" style="float: left;">
+      <div class="col-md-12">
+        <p>1. &nbsp;&nbsp; Hon'ble Minister, Power Division, Ministry of power, Energy & Mineral Resources, GOV,
+          Bangladesh Secretarial, Dhaka</p>
+        <p>2. &nbsp;&nbsp; Secretary, Power Division. Ministry of Power, Energy & Mineral Resources, GOV, Bangladesh
+          Secretarial, Dhaka</p>
+        <p>3. &nbsp;&nbsp; Chairman, Bangladesh Energy Regulatory Commission (BERC), TCB Bhnban(4th Floor), I Kaowran
+          Bazar, Dhaka</p>
+        <p>4. &nbsp;&nbsp; Chairman, Bangladesh power development Board (Bpl)B), WAPDA Building, Dhaka</p>
+        <p>5. &nbsp;&nbsp; Managing Director, I)haka Power Distribution Company Ltd.(DPDCL), Bidyut Bhaban, l Abdul Gani
+          Road, Dhaka</p>
+        <p>6. &nbsp;&nbsp; Chairman, Rural Electrification Board (REB), Joarsahara. Khilkhel, Dhaka</p>
+        <p>7. &nbsp;&nbsp; Director General, Power Cell, MEMR. Bidyut Bhaban (7th Floor), I Abdul Gani Road, Dhaka</p>
+        <p>8. &nbsp;&nbsp; All Members of the Board, BPDB, Dhaka</p>
+        <p>9. &nbsp;&nbsp; Division chief (l&E). Planning commission., Bl(`ck No.-3, Room No.-13, Sher-e-Bangla Nagar,
+          Dhaka</p>
+        <p>10. &nbsp;&nbsp; Managing Director. Power Grid Company of Bangladesh (PGCB)Ltd., Aftab Nagar(Beside NLDC
+          Building)Badda,Dhaka-1212.</p>
+        <p>11. &nbsp;&nbsp; Managing Director, West Zone Power Distribution C6.mpany Ltd. (W7,PDCO), Biddut Bhahan,
+          Boyra, Rajshahi</p>
+        <p>12. &nbsp;&nbsp; Managing Director, West Zone Power Distribution C6.mpany Ltd. (W7,PDCO), Biddut Bhahan,
+          Boyra, Khulna</p>
+        <p>13. &nbsp;&nbsp; Director General (Monitoring Cell), Ministry of Finance, GOB, Bangladesh Secretariat, Dhaka
+        </p>
+        <p>14. &nbsp;&nbsp; Chief Engineer, P&D/ Generation/ Private Genei.ation/ Company Affair, BPDB, Dhaka</p>
+        <p>15. &nbsp;&nbsp; Chief Engineer, Chittngong/Mymensingli/Comiila/Sylhet Distribution Zone, BPDB</p>
+        <p>16. &nbsp;&nbsp; Controller. Accounts & Finance (with the request for arranging to check and reconcile the
+          relevant statistics, BPDB, Bidyut Bhaban, I Abdul Gani Road, Dhaka</p>
+        <p>17. &nbsp;&nbsp; Superintending Engineer, Energy Auditing Unit (EAU)/Consumer Affairs, Bidyut Bhaban, BPDB,
+          Dhaka</p>
+        <p>18. &nbsp;&nbsp; Director, System Planning, BPDB, WAPDA Building (5th Floor), Dhaka</p>
+        <p>19. &nbsp;&nbsp; Managing Director, I)haka Power Distribution Company Ltd.(DPDCL), Bidyut Bhaban, l Abdul
+          Gani Road, Dhaka</p>
+        <p>20. &nbsp;&nbsp; Director, IPP Cell-I/2/3 Bidyut Bhaban,I Abdul Gani Road, BPDB, Dhaka</p>
+        <p>21. &nbsp;&nbsp; Director, Programme, Bidyut Bhaban (14th floor, I Abdul Gani Road, BPDB, Dhaka</p>
+        <p>22. &nbsp;&nbsp; Senior System Analyst, Computer Centre, BPDB. WAPDA Building (4th floor), Dhaka</p>
+        <p>23. &nbsp;&nbsp; Director, Accounts/Finance, Biddyut Bhaban, I No. Abdul Gani Road, BPDB, Dhaka</p>
+        <p>24. &nbsp;&nbsp; MDirector, Public Relation, BPDB, WAPDA Building ( 10th Floor), Dhaka</p>
+        <p>25. &nbsp;&nbsp; Deputy Secretary. Distribution/Generation, BPDB, WAPDA Building, Dhaka.BPDB</p>
+        <p>26. &nbsp;&nbsp; Deputy Secretary (Co-ordination), Power Division, Ministry of Power, Energy & Mineral
+          Resources. GOB, Bangladesh, Dhaka.'</p>
+        <p>27. &nbsp;&nbsp; Secretariat, Dhaka.</p>
+        <p>28. &nbsp;&nbsp; CDeputy Chief, Power Division, Ministry of Power, Energy & Mineral Resources, GOB,
+          Bangladesh Secretariat, Dhaka.</p>
+        <p>29. &nbsp;&nbsp; EIT„ World Bank Resident Mission in Bangladesh, Plot No: E-32` Shere-Bangla Nagar, Agangaon,
+          Dhaka-1207</p>
+        <p>30. &nbsp;&nbsp; Head of Energy, Asian Development Bank, BRM, Plow No: Fj-31, Shere-Bangla Nagar, Agargaori,
+          Dhaka-12</p>
+        <p>31. &nbsp;&nbsp; JICA Representative, Ahmmed Mukammel Uddin, Senior program Manager, Office in Dhaka, Uday
+          Tower (8th Floor 57,57A). Gulshan Avenue(South), Circle-I, Dhaka-1212</p>
+        <p>32. &nbsp;&nbsp; The Resident Representative, International Monitary Fund (IMF), Bangladesh 2nd floor, Plot #
+          E32, Sher-E-Bangla Nagar Agargaon, Dhaka-1207</p>
+        <p>33. &nbsp;&nbsp; First Secretary (Engineering), AMOD, British High Commission, Baridhara, Dhaka</p>
+        <p>34. &nbsp;&nbsp; Kreditanstalt Fur Wiederanfbau (KFW) Office Dhaka, House 50 , Road 23, Block-B,Banani,
+          Dhaka-1213</p>
+        <p>35. &nbsp;&nbsp; Mission Director, USAID, American Embassy, Madane Avenue, Baridhara, Dhaka</p>
+        <p>36. &nbsp;&nbsp; Deputy Director,Current Production Section. National Accounting Wing, Baiigladesh Bureau of
+          Statistics, Statistics Building, F,-27/A, Agargaon, Dhaka- 1207</p>
+
+      </div>
+    </div>
+    <div class="row mt-5" style="float: right;">
+      <p style="text-align: center;">(Deputy General Manager) <br> Commercial Operation <br> BPDB, Dhaka </p>
+    </div>
+  </div>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+
+    <script src="../js/main.js"></script>
+    <script src="../js/script.min.js"></script>
+    <!-- datatable script  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>

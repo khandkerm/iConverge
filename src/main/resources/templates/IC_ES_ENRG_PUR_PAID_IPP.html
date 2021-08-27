@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>iConverge</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sidebar-themes.css">
+    <link rel="stylesheet" href="../css/form-style.css">
+
+    <!-- datatable link  -->
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="page-wrapper default-theme  bg1 toggled">
+        <span th:remove="tag" th:utext="${dataHtml}"></span>
+
+        
+        <!-- page-content  -->
+        <main class="page-content" style="overflow:auto;">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid" style="padding: 0px; ">
+                <div class="title-bar"
+                    style="height: 90px; background-image: url(../img/bn.jpeg) !important;background-repeat: no-repeat;width: 100%;height: 100%;background-size: cover;">
+                    <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#"
+                        style="margin: 20px; background: #3ab54a;">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                            </svg></span>
+                    </a>
+                </div>
+<!--                 <div class="container" > -->
+<!--                 </div> -->
+
+<!-- Table No 32  -->
+    <div class="container pt-4 pb-4">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Energy Purchased From and Amount Paid to IPP</h3>
+            </div>
+        </div>
+        <div class="row pt-4 pb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered border-secondary">
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <th style="vertical-align: middle;" rowspan="2">Year/Fiscal Year</th>
+                        <th colspan="3" scope="colgroup">Haripur Power ltd.</th>
+                        <th colspan="3" scope="colgroup">Meghnaghat Power ltd.</th>
+                        <th colspan="3" scope="colgroup">Rural Power Com ltd.(RPCL)</th>
+                        <th colspan="3" scope="colgroup">Aggreeco Int Power ltd.</th>
+                        <th colspan="3" scope="colgroup">GBB Power ltd.</th>
+                        <th colspan="3" scope="colgroup">Sahzibazar PowerCo(86MW)</th>
+                        <th colspan="3" scope="colgroup">Dorren Power(Tangail 22MW)</th>
+                        <th colspan="3" scope="colgroup">Dorren Power(Tangail 22MW)</th>
+                        <th colspan="3" scope="colgroup">Desh Cam Power(Kumargaon)</th>
+                        <th colspan="3" scope="colgroup">Regent Power ltd.(Barakbkundu)</th>
+                        <th colspan="3" scope="colgroup">Venture Ene. Res.(Bhola)</th>
+                        <th colspan="3" scope="colgroup">Summit Pur. Po Co ltd(Jangalia)</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Table No 33  -->
+    <div class="container pt-4 pb-4">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Energy Purchased From and Amount Paid to IPP</h3>
+            </div>
+        </div>
+        <div class="row pt-4 pb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered border-secondary">
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <th style="vertical-align: middle;" rowspan="2">Year/Fiscal Year</th>
+                        <th colspan="3" scope="colgroup">Barakatullah<br>Ele.Dyn.ltd(fenchugonj)</th>
+                        <th colspan="3" scope="colgroup">Malancha</th>
+                        <th colspan="3" scope="colgroup">Precision Energy(Ashugonj)</th>
+                        <th colspan="3" scope="colgroup">Amnura 50MW</th>
+                        <th colspan="3" scope="colgroup">Summit Modongonj 100MW</th>
+                        <th colspan="3" scope="colgroup">Khulna PowerCo(115MW)</th>
+                        <th colspan="3" scope="colgroup">Ghorashal Max 78.5MW</th>
+                        <th colspan="3" scope="colgroup">Khanjahan Ali 40MW</th>
+                        <th colspan="3" scope="colgroup">Julda Acron Intra.</th>
+                        <th colspan="3" scope="colgroup">IEL Meghnaghat </th>
+                        <th colspan="3" scope="colgroup">Shidd. Dutch Bangla</th>
+                        <th colspan="3" scope="colgroup">Ene.Prima(fenchugonj)</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Table No 34  -->
+    <div class="container pt-4 pb-4">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Energy Purchased From and Amount Paid to IPP</h3>
+            </div>
+        </div>
+        <div class="row pt-4 pb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered border-secondary">
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <th style="vertical-align: middle;" rowspan="2">Year/Fiscal Year</th>
+                        <th colspan="3" scope="colgroup">Bog.Ene.Prima</th>
+                        <th colspan="3" scope="colgroup">Power Pac<br>Mutiara(Keranigonj)</th>
+                        <th colspan="3" scope="colgroup">Katakhali</th>
+                        <th colspan="3" scope="colgroup">Summit Meghnaghat Power Co ltd.</th>
+                        <th colspan="3" scope="colgroup">Raj Lanka Power Co ltd. 55MW</th>
+                        <th colspan="3" scope="colgroup">Ashugonj Meghnaghat 51MW</th>
+                        <th colspan="3" scope="colgroup">Digital Associates</th>
+                        <th colspan="3" scope="colgroup">Regent Po. Plant 108MW</th>
+                        <th colspan="3" scope="colgroup">ECPV Chittagong 108MW</th>
+                        <th colspan="3" scope="colgroup">Com 52MW Lakdhanvi Bangla</th>
+                        <th colspan="3" scope="colgroup">Shidd. Dutch Bangla</th>
+                        <th colspan="3" scope="colgroup">Sinha Peoples Energy ltd.</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table No 35  -->
+
+    <div class="container pt-4 pb-4">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Energy Purchased From and Amount Paid to IPP</h3>
+            </div>
+        </div>
+        <div class="row pt-4 pb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered border-secondary">
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <th style="vertical-align: middle;" rowspan="2">Year/Fiscal Year</th>
+                        <th colspan="3" scope="colgroup">United Power Co ltd. 200MW Exp.</th>
+                        <th colspan="3" scope="colgroup">Summit Bibiyana 2 341 MW</th>
+                        <th colspan="3" scope="colgroup">Summit Modongonj 55 MW</th>
+                        <th colspan="3" scope="colgroup">Summit Barishal 110 MW</th>
+                        <th colspan="3" scope="colgroup">Dhaka(Dorren) Northern PS. ltd.</th>
+                        <th colspan="3" scope="colgroup">Dhaka(Dorren) Southern PS. ltd.</th>
+                        <th colspan="3" scope="colgroup">CLC 108MW Bosila</th>
+                        <th colspan="3" scope="colgroup">Jamalpur PS ltd. Powerpac Mat.</th>
+                        <th colspan="3" scope="colgroup">Shahjahanullah PS. ltd.</th>
+                        <th colspan="3" scope="colgroup">Kusiara Power ltd.</th>
+                        <th colspan="3" scope="colgroup">Green Solar Power<br>Sharishabari</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table No 36  -->
+
+    <div class="container pt-4 pb-4">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Energy Purchased From and Amount Paid to IPP</h3>
+            </div>
+        </div>
+        <div class="row pt-4 pb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered border-secondary">
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <th style="vertical-align: middle;" rowspan="2">Year/Fiscal Year</th>
+                        <th colspan="3" scope="colgroup">Benco. Energy ltd.</th>
+                        <th colspan="3" scope="colgroup">Aggreko 05MW Bhola</th>
+                        <th colspan="3" scope="colgroup">Daudkandi 200MW Bangla Trac.</th>
+                        <th colspan="3" scope="colgroup">Noapara 200MW Bangla Trac.</th>
+                        <th colspan="3" scope="colgroup">Kodda Gazipur 300MW Unit-2 Summit</th>
+                        <th colspan="3" scope="colgroup">Aggreko Brahmanngon 100MW</th>
+                        <th colspan="3" scope="colgroup">APR Energy 300MW</th>
+                        <th colspan="3" scope="colgroup">United Mymensing Power ltd.(UMP)</th>
+                        <th colspan="3" scope="colgroup">Aggreko Aourahati 100MW</th>
+                        <th colspan="3" scope="colgroup">ACE Alliance Power ltd</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table No 37  -->
+
+    <div class="container pt-4 pb-4">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Energy Purchased From and Amount Paid to IPP</h3>
+            </div>
+        </div>
+        <div class="row pt-4 pb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered border-secondary">
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <th style="vertical-align: middle;" rowspan="2">Year/Fiscal Year</th>
+                        <th colspan="3" scope="colgroup">Confidence Power 113MW Rangpur</th>
+                        <th colspan="3" scope="colgroup">Baraka Shikalbaha 105MW</th>
+                        <th colspan="3" scope="colgroup">Sympa Solar Power 8MW</th>
+                        <th colspan="3" scope="colgroup">Zodiac Power</th>
+                        <th colspan="3" scope="colgroup">Karnaphuli Power 100GW Power ltd.</th>
+                        <th colspan="3" scope="colgroup">United Arrwara 300MW PS</th>
+                        <th colspan="3" scope="colgroup">Bogura 113MW PP(Confidence) Unit-1</th>
+                        <th colspan="3" scope="colgroup">HF 113MW Power Limited</th>
+                        <th colspan="3" scope="colgroup">Feni Lanka Power 114MW PP</th>
+                        <th colspan="3" scope="colgroup">Juldha 100MW PP U-2</th>
+                        <th colspan="3" scope="colgroup">Orion Power Sonargaon</th>
+                        <th colspan="3" scope="colgroup">Manikganj 162MW PG</th>
+                        <th colspan="3" scope="colgroup">Nutan Biddyut 220MW</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table No 38  -->
+
+    <div class="container pt-4 pb-4">
+        <div class="row pt-3 pb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Energy Purchased From and Amount Paid to IPP</h3>
+            </div>
+        </div>
+        <div class="row pt-4 pb-4">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered border-secondary">
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <tr>
+                        <th style="vertical-align: middle;" rowspan="2">Year/Fiscal Year</th>
+                        <th colspan="3" scope="colgroup">20MW Solar Teknaf</th>
+                        <th colspan="3" scope="colgroup">Sernbcorp SNWPGCL</th>
+                        <th colspan="3" scope="colgroup">Orion PowerRupsha ltd 105MW</th>
+                        <th colspan="3" scope="colgroup">Desh Energy Chandpur 200MW</th>
+                        <th colspan="3" scope="colgroup">Juldha 100MW U-3</th>
+                        <th colspan="3" scope="colgroup">Ashugonj 105MW (Midland East)</th>
+                        <th colspan="3" scope="colgroup">United Jamalpur UJPL</th>
+                        <th colspan="3" scope="colgroup">Confidence CPBL-2</th>
+                        <th colspan="3" scope="colgroup">Paramount Bheramara</th>
+                        <th colspan="3" scope="colgroup">IPP/RPP Total</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                        <th scope="col">Energy<br>(Mkwh)</th>
+                        <th scope="col">Bill(Mtk)</th>
+                        <th scope="col">Avg-Rate(TK/kwh)</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FY 04-05</th>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                        <td><span>9.75</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+
+    <script src="../js/main.js"></script>
+    <!-- datatable script  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>

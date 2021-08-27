@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>iConverge</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/sidebar-themes.css">
+    <link rel="stylesheet" href="../css/form-style.css">
+
+    <!-- datatable link  -->
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+<style type="text/css">
+table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+            text-align: left;
+            padding: 8px;
+        }
+</style>
+</head>
+
+<body>
+    <div class="page-wrapper default-theme  bg1 toggled">
+        <span th:remove="tag" th:utext="${dataHtml}"></span>
+
+        
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid" style="padding: 0px; ">
+                <div class="title-bar"
+                    style="height: 90px; background-image: url(../img/bn.jpeg) !important;background-repeat: no-repeat;width: 100%;height: 100%;background-size: cover;">
+                    <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#"
+                        style="margin: 20px; background: #3ab54a;">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                            </svg></span>
+                    </a>
+                </div>
+                <div class="container" >
+                <div class="col-md-12">
+                <h2 style="text-align: center; font-size: 22px; font-weight: bold; margin-bottom: 40px;">Commercial Operation Statistics of REB/PBS[September'20]</h2>
+
+                <table>
+                  <tr style="height: 50px;">
+                    <th style="width: 60px;"></th>
+                    <th style="width: 20px;"></th>
+                    <th style="width: 120px;"></th>
+                    <th colspan="4" style="text-align: center;">Billed Unit</th>
+                    <th colspan="4" style="text-align: center;">Billed Amount</th>
+                    <th style="text-align: center;">Collection</th>
+                    <th rowspan="2" style="text-align: center;">Bill Rate</th>
+                    <th rowspan="2" style="text-align: center;">Receivable Up to august'20</th>
+                    <th rowspan="2" style="text-align: center;">Receivable Up to September'20</th>
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 50px;">
+                    <th style="text-align: center;">Energy Auditing Unit/Division</th>
+                    <th style="text-align: center;">Sl No.</th>
+                    <th style="text-align: center;">PBS</th>
+                    <th style="text-align: center;">Energy<br>(kwh)</br></th>
+                    <th style="text-align: center;">PFC Unit(kwh)</th>
+                    <th style="text-align: center;">Bus Loss Unit</th>
+                    <th style="text-align: center;">Total</th>
+                    <th style="text-align: center;">Energy Charge TK</th>
+                    <th style="text-align: center;">PFC Charge TK</th>
+                    <th style="text-align: center;"> Bus Loss Charge</th>
+                    <th style="text-align: center;">Total</th>
+                    <th style="text-align: center;">Net Collection For the Month of May</th>
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th colspan="12"></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th>     -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th rowspan="9">Mymensingh</th>
+                    <th>1</th>
+                    <th style="font-size: 14px;">Mymensingh-1</th>
+                    <th>46849960</th>
+                    <th></th>
+                    <th></th>
+                    <th>46849960</th>
+                    <th>2046355855</th>
+                    <th></th>
+                    <th></th>    
+                    <th>2046355855</th>
+                    <th>210887439</th>
+                    <th>4368</th>
+                    <th>566975396</th>
+                    <th>560124420</th>
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >2</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >3</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >4</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >5</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >6</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >7</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >8</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >9</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                  <tr style="height: 30px;">
+                    <th >Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th rowspan="6">Rajshahi</th>
+                    <th>10</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >11</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >12</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >13</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >14</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >15</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th rowspan="10">Bogra</th>
+                    <th>16</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >17</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >18</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >19</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >20</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >21</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >22</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >23</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >24</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >25</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th rowspan="8">Rangpur</th>
+                    <th>26</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >27</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >28</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >29</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >30</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >31</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >32</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >33</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th >Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th rowspan="10">Comilla</th>
+                    <th>34</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >35</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >36</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >37</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >38</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >39</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >40</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >41</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >42</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >43</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th >Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th rowspan="5">Sylhet</th>
+                    <th>44</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >45</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >46</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >47</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >48</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th >Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                
+                
+                  <tr style="height: 30px;">
+                    <th rowspan="5">Chittagong</th>
+                    <th>50</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >51</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                  <tr style="height: 30px;">
+                    <th >52</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <!-- <th></th> -->
+                  </tr>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  <!-- <tr>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                    <th>Country</th>
+                    <th>Country</th>
+                    <th>Country</th>
+                    <th>Country</th>
+                    <th>Country</th>
+                    <th>Country</th>
+                  </tr> -->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  <!-- <tr>
+                    <td>Alfred</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                  </tr>
+                  <tr>
+                    <td>Centr</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                  </tr>
+                  <tr>
+                    <td>Erns</td>
+                    <td>Roland Mendel</td>
+                    <td>Austria</td>
+                  </tr>
+                  <tr>
+                    <td>Island </td>
+                    <td>Helen Bennett</td>
+                    <td>UK</td>
+                  </tr>
+                  <tr>
+                    <td>Laughing</td>
+                    <td>Yoshi Tannamuri</td>
+                    <td>Canada</td>
+                  </tr>
+                  <tr>
+                    <td>Magazzini</td>
+                    <td>Giovanni Rovelli</td>
+                    <td>Italy</td>
+                  </tr> -->
+                </table>
+
+
+                <!-- page 17 starts  -->
+                <table style="margin-top: 40px ;">
+                    <tr style="height: 50px;">
+                      <th style="width: 60px;"></th>
+                      <th style="width: 20px;"></th>
+                      <th style="width: 120px;"></th>
+                      <th colspan="4" style="text-align: center;">Billed Unit</th>
+                      <th colspan="4" style="text-align: center;">Billed Amount</th>
+                      <th style="text-align: center;">Collection</th>
+                      <th rowspan="2" style="text-align: center;">Bill Rate</th>
+                      <th rowspan="2" style="text-align: center;">Receivable Up to august'20</th>
+                      <th rowspan="2" style="text-align: center;">Receivable Up to September'20</th>
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                    </tr>
+                  
+                  
+                    <tr style="height: 50px;">
+                      <th style="text-align: center;">Energy Auditing Unit/Division</th>
+                      <th style="text-align: center;">Sl No.</th>
+                      <th style="text-align: center;">PBS</th>
+                      <th style="text-align: center;">Energy<br>(kwh)</br></th>
+                      <th style="text-align: center;">PFC Unit(kwh)</th>
+                      <th style="text-align: center;">Bus Loss Unit</th>
+                      <th style="text-align: center;">Total</th>
+                      <th style="text-align: center;">Energy Charge TK</th>
+                      <th style="text-align: center;">PFC Charge TK</th>
+                      <th style="text-align: center;"> Bus Loss Charge</th>
+                      <th style="text-align: center;">Total</th>
+                      <th style="text-align: center;">Net Collection For the Month of May</th>
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                    </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th ></th>
+                        <th>53</th>
+                        <th style="font-size: 12px;">Chittagong-1(patya)</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >Total</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                      <tr style="height: 30px;">
+                        <th colspan="3">PBS total excluding ADJ Dhaka & WZPDCL area</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th>
+                        <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th rowspan="12">PBS Adjacent Dhaka</th>
+                        <th>54</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >55</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >56</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >57</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >58</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >59</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >60</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >61</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >62</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                      <tr style="height: 30px;">
+                        <th >63</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >64</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >65</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th colspan="3">PBS total Adjacent Dhaka </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th>
+                        <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th rowspan="5">Khulna</th>
+                        <th>65</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >67</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >68</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >69</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >70</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      
+                      <tr style="height: 30px;">
+                        <th>Subtotal </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th rowspan="6">Jessore</th>
+                        <th>71</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >72</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >73</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >74</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >75</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >76</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th>Subtotal </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                    
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th rowspan="11">Barisal</th>
+                        <th>77</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >78</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >79</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >80</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >81</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >82</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >83</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >84</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >85</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >86</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th >87</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th colspan="3">Subtotal</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th>
+                        <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th colspan="3">Total of WZPDCL area </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th>
+                        <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                      <tr style="height: 30px;">
+                        <th colspan="3">PBS total</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>    
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <!-- <th></th>
+                        <th></th> -->
+                      </tr>
+                    
+                    
+                    
+                    
+                    
+                    
+                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <!-- <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                        <th>Country</th>
+                        <th>Country</th>
+                        <th>Country</th>
+                        <th>Country</th>
+                        <th>Country</th>
+                        <th>Country</th>
+                      </tr> -->
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                      <!-- <tr>
+                        <td>Alfred</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                      </tr>
+                      <tr>
+                        <td>Centr</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                      </tr>
+                      <tr>
+                        <td>Erns</td>
+                        <td>Roland Mendel</td>
+                        <td>Austria</td>
+                      </tr>
+                      <tr>
+                        <td>Island </td>
+                        <td>Helen Bennett</td>
+                        <td>UK</td>
+                      </tr>
+                      <tr>
+                        <td>Laughing</td>
+                        <td>Yoshi Tannamuri</td>
+                        <td>Canada</td>
+                      </tr>
+                      <tr>
+                        <td>Magazzini</td>
+                        <td>Giovanni Rovelli</td>
+                        <td>Italy</td>
+                      </tr> -->
+                    </table>
+
+                <!-- page 17 ends  -->
+
+
+
+                <!-- page 18 starts  -->
+                <h2 style="text-align: center; font-weight: bold; font-size: 22px; font-weight: bold; margin-top: 40px;">Bangladesh Power Development Board</h2>
+                <h3 style="text-align: center;font-size: 18px; font-weight: bold; ">Commercial operation Statistics of REB/PBS</h3>
+                <h3 style="text-align: center;font-size: 18px; font-weight: bold; ">SINCE FY  "2011-2012"</h3>
+                  
+
+
+                <table>
+                    <tr style="height: 30px;">
+                      <th rowspan="2" style="width: 150px; text-align: center;">FY</th>
+                      <th  style="width: 70px;"></th>
+                      <th colspan="4" style="text-align: center;">Billed Unit</th>
+                      <th colspan="5" style="text-align: center;">Billed Amount TK</th>
+                      <th rowspan="2" style="width: 150px; text-align: center;">Receivable</th>
+                      <!-- <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th> -->
+                      <!-- <th></th>
+                      <th></th>
+                      <th></th> -->
+                      
+                    </tr>
+                  
+                    <tr style="height: 80px;">
+                      <th>Receivable on Dec'08 from REB(MTK)</th>
+                      <th style="text-align: center;">Energy(Unit)</th>
+                      <th style="text-align: center;">PFC Unit(Unit)</th>
+                      <th style="text-align: center;">Bus Loss(Unit)</th>
+                      <th style="text-align: center;">Total</th>
+                      <th style="text-align: center;"> Energy Charge TK</th>
+                      <th style="text-align: center;">PFC Charge(TK)</th>
+                      <th style="text-align: center;"> Bus Loss(TK)</th>
+                      <th style="text-align: center;"> Total</th>
+                      <th style="text-align: center;">Net Coll From REB(TK)</th>
+                      <!-- <th></th> -->
+                      <!-- <th></th> -->
+                      
+                    </tr>
+                  
+                  
+                    <tr style="height: 30px;">
+                      <th></th>
+                      <th colspan="10"></th>
+                      <th></th>
+                      <!-- <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th> -->
+                      
+                    </tr>
+                  
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2011-12</th>
+                      <th></th>
+                      <th>12,535,756,000</th>
+                      <th>156,488</th>
+                      <th>12,535,756,000</th>
+                      <th>12,535,756,000</th>
+                      <th>37,398,005,075</th>
+                      <th>17,396,612</th>
+                      <th>631,038</th>
+                      <th>37,398,005,075</th>
+                      <th>37</th>
+                      <th>37,3</th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2012-13</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2013-14</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2014-15</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2015-16</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2016-17</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2017-18</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2018-19</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>FY 2019-20</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>July'20</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>August'20</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th>September'20</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    <tr style="height: 30px;">
+                      <th style="font-size: 12px;">FY 2019-20(up to july'21)</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      
+                    </tr>
+                  
+                    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                   
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <!-- <tr>
+                      <th>Company</th>
+                      <th>Contact</th>
+                      <th>Country</th>
+                      <th>Country</th>
+                      <th>Country</th>
+                      <th>Country</th>
+                      <th>Country</th>
+                      <th>Country</th>
+                      <th>Country</th>
+                    </tr> -->
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                    <!-- <tr>
+                      <td>Alfred</td>
+                      <td>Maria Anders</td>
+                      <td>Germany</td>
+                    </tr>
+                    <tr>
+                      <td>Centr</td>
+                      <td>Francisco Chang</td>
+                      <td>Mexico</td>
+                    </tr>
+                    <tr>
+                      <td>Erns</td>
+                      <td>Roland Mendel</td>
+                      <td>Austria</td>
+                    </tr>
+                    <tr>
+                      <td>Island </td>
+                      <td>Helen Bennett</td>
+                      <td>UK</td>
+                    </tr>
+                    <tr>
+                      <td>Laughing</td>
+                      <td>Yoshi Tannamuri</td>
+                      <td>Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Magazzini</td>
+                      <td>Giovanni Rovelli</td>
+                      <td>Italy</td>
+                    </tr> -->
+                  </table>
+
+                <!-- page 18 ends  -->
+
+
+
+
+              
+
+
+                   
+
+
+
+               
+
+
+
+            
+
+            
+
+
+
+            </div>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+
+    <script src="../js/main.js"></script>
+    <!-- datatable script  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>

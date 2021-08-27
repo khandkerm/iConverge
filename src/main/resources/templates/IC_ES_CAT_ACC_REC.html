@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description"
+	content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+<title>iConverge</title>
+
+<!-- using online links -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+	crossorigin="anonymous">
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+	crossorigin="anonymous">
+
+<!-- using local links -->
+<!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/sidebar-themes.css">
+<link rel="stylesheet" href="../../css/form-style.css">
+
+
+
+
+
+</head>
+
+<body>
+	<div class="page-wrapper default-theme  bg1 toggled">
+		<span th:remove="tag" th:utext="${dataHtml}"></span>
+
+
+		<!-- page-content  -->
+		<main class="page-content" style="overflow: auto;">
+			<div id="overlay" class="overlay"></div>
+			<div class="container-fluid" style="padding: 0px;">
+				<div class="title-bar"
+					style="height: 90px; background-image: url(../img/bn.jpeg) !important; background-repeat: no-repeat; width: 100%; height: 100%; background-size: cover;">
+					<a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#"
+						style="margin: 20px; background: #3ab54a;"> <span><svg
+								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+								fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+									d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                            </svg></span>
+					</a>
+				</div>
+				<!-- heading start -->
+
+				<div class="container">
+					<form th:action="@{/IC_ES_CAT_ACC_REC}" method="post"
+						th:object="${reportModel}">
+						<div class="card mt-5 mb-5">
+							<div class="row pt-4 pb-4 card-body">
+								<div class="col-lg-2 col-md-2 col-sm-12 mt-3 text-center">
+									<label for="bill" class="">Month :</label>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-12">
+									<select id="one" class="form-control" name="one">
+										<option value="">Select Month</span></option>
+
+										<option th:each="b : ${billList}"
+											th:value="${b.BILL_CYCLE_CODE}"
+											th:text="${b.BILL_CYCLE_DESC}"
+											th:selected="${b.BILL_CYCLE_CODE}==${reportModel.one}"></option>
+									</select>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-12 text-center">
+									<input type="submit" value="Submit"
+										class="btn btn-lg btn-success mr-1 mb-1" />
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-12 text-center">
+								<input type="button"
+						class="btn btn-lg btn-danger mr-1 mb-1"
+						id="printme" value="Print" onclick="printContent('divName')" />
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+
+
+				
+				<div id="divName">
+				<!-- upper table part -->
+				<div class="container" >
+					<div class="row">
+						<div class="col-sm" style="text-align: center;">
+							<h6>
+								<b>BANGLADESH POWER DEVELOPMENT BOARD</b>
+							</h6>
+							<h6>
+								<b>Category wise Account Receivable</b>
+							</h6>
+						</div>
+						<div class="col-sm" style="text-align: right;">
+							<h6>
+								<b>Figures in MTk</b>
+							</h6>
+						</div>
+					</div>
+					<table class="table  table-bordered" style="text-align: center;">
+
+						<!-- first row -->
+
+
+						<tr>
+							<th rowspan="3">Year/Month</th>
+							<th colspan="10">Retail Consumer</th>
+							<th colspan="5">Bulk/Utility</th>
+							<th colspan="1"></th>
+							<th rowspan="3">Total</th>
+						</tr>
+
+						<!-- second row -->
+
+
+						<tr>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+							<th>D</th>
+							<th>E</th>
+							<th>F(11 Kv)</th>
+							<th>G-2(132Kv)</th>
+							<th>G-3(230Kv)</th>
+							<th>H(33Kv)</th>
+							<th>J</th>
+							<th>G-1</th>
+							<th>I-1</th>
+							<th>I-2</th>
+							<th>I-3</th>
+							<th>I-5</th>
+							<th></th>
+						</tr>
+
+
+						<!-- third row -->
+
+						<tr>
+							<th>Residential Light</th>
+							<th>Agricultural pump</th>
+							<th>Small Industrial</th>
+							<th>Non Resi. Light</th>
+							<th>Commercial & Office</th>
+							<th>Medium Voltage</th>
+							<th>Extra High Voltage General Purpose</th>
+							<th>Extra High Voltage General Purpose</th>
+							<th>High Voltage</th>
+							<th>Street Lights & Water Pump</th>
+							<th>DPDCL (132 & 33Kv)</th>
+							<th>PBS</th>
+							<th>DESCO (132 & 33Kv)</th>
+							<th>WZPDCL (132 & 33Kv)</th>
+							<th>NESCO (132 & 33Kv)</th>
+							<th>DESA</th>
+						</tr>
+
+
+						<!-- data start -->
+
+
+
+						<tr th:each="s: ${acc_REC_ONEs}">
+							<th scope="row" th:text="${s.YEAR_CODE}"></th>
+							<td scope="row" th:text="${s.REC_A}"></td>
+							<td scope="row" th:text="${s.REC_B}"></td>
+							<td scope="row" th:text="${s.REC_C}"></td>
+							<td scope="row" th:text="${s.REC_D}"></td>
+							<td scope="row" th:text="${s.REC_E}"></td>
+							<td scope="row" th:text="${s.REC_F}"></td>
+							<td scope="row" th:text="${s.REC_G2}"></td>
+							<td scope="row" th:text="${s.REC_G3}"></td>
+							<td scope="row" th:text="${s.REC_H}"></td>
+							<td></td>
+							<td scope="row" th:text="${s.REC_G1}"></td>
+							<td scope="row" th:text="${s.REC_I1}"></td>
+							<td scope="row" th:text="${s.REC_I2}"></td>
+							<td scope="row" th:text="${s.REC_I3}"></td>
+							<td scope="row" th:text="${s.REC_I5}"></td>
+							<td scope="row" th:text="${s.REC_DESA}"></td>
+						</tr>
+
+
+					</table>
+
+				</div>
+				<!-- lower table part -->
+
+				<div class="container">
+					<table class="table table-bordered mt-4"
+						style="text-align: center;">
+
+
+						<tr>
+							<th colspan="2">Year/Month</th>
+							<th>LT-A</th>
+							<th>LT-B</th>
+							<th>LT-C1</th>
+							<th>LT-C2</th>
+							<th>LT-D1</th>
+							<th>LT-D3</th>
+							<th>LT-E</th>
+							<th>LT-TEM</th>
+							<th>MT-1</th>
+							<th>MT-2</th>
+							<th>MT-3</th>
+							<th>MT-4</th>
+							<th>MT-5</th>
+							<th>MT-6</th>
+							<th>EHT-1</th>
+							<th>EHT-2</th>
+							<th>HT-1</th>
+							<th>HT-2</th>
+							<th>HT-3</th>
+							<th>HT-4</th>
+							<th>LT-02</th>
+							<th>G-1</th>
+							<th>i-1</th>
+							<th>i-2</th>
+							<th>i-3</th>
+							<th>i-5</th>
+							<th>DESA</th>
+							<th>Total</th>
+						</tr>
+
+
+
+						<tr th:each="t: ${acc_REC_TWOs}">
+							<th colspan="2" th:text="${t.YRMON}"></th>
+							<td scope="row" th:text="${t.REC_LTA}"></td>
+							<td scope="row" th:text="${t.REC_LTB}"></td>
+							<td scope="row" th:text="${t.REC_LTC1}"></td>
+							<td scope="row" th:text="${t.REC_LTC2}"></td>
+							<td scope="row" th:text="${t.REC_LTD1}"></td>
+							<td scope="row" th:text="${t.REC_LTD3}"></td>
+							<td scope="row" th:text="${t.REC_LTE}"></td>
+							<td scope="row" th:text="${t.REC_LTT}"></td>
+							<td scope="row" th:text="${t.REC_MT1}"></td>
+							<td scope="row" th:text="${t.REC_MT2}"></td>
+							<td scope="row" th:text="${t.REC_MT3}"></td>
+							<!-- <td scope="row" th:text="${t.REC_MT4"></td>  -->
+							<td scope="row" th:text="${t.REC_MT5}"></td>
+							<td scope="row" th:text="${t.REC_MT6}"></td>
+							<td scope="row" th:text="${t.REC_HT1}"></td>
+							<td scope="row" th:text="${t.REC_HT2}"></td>
+							<td scope="row" th:text="${t.REC_HT3}"></td>
+							<td scope="row" th:text="${t.REC_HT4}"></td>
+							<td scope="row" th:text="${t.REC_LTD2}"></td>
+							<td scope="row" th:text="${t.REC_G1}"></td>
+							<td scope="row" th:text="${t.REC_I1}"></td>
+							<td scope="row" th:text="${t.REC_I2}"></td>
+							<td scope="row" th:text="${t.REC_I3}"></td>
+							<td scope="row" th:text="${t.REC_I5}"></td>
+							<td scope="row" th:text="${t.REC_DESA}"></td>
+						</tr>
+
+
+
+
+
+					</table>
+
+				</div>
+				</div>
+				
+
+				
+
+				
+			</div>
+		</main>
+		<!-- page-content" -->
+	</div>
+	<!-- page-wrapper -->
+
+	<!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+
+<script src="../../js/main.js"></script>
+
+<script>
+function printContent(el){
+  
+	 var divToPrint=document.getElementById(el);
+
+	  var newWin=window.open('','Print-Window');
+
+	  newWin.document.open();
+
+	  newWin.document.write('<html> <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"crossorigin="anonymous">');
+	  newWin.document.write('<style> *{font-size: 16px;} .fig1{  height: 60%!important} .dt-button{display:none!important;} #table1{border: 1px solid black; width: 80%!important; height: 70%!important;} </style>'); 
+	  newWin.document.write('<body onload="window.print()"> ');
+	  
+	  
+	  
+	  newWin.document.write(divToPrint.innerHTML);
+	  
+	  newWin.document.write('</body></html>');
+
+	  newWin.document.close();
+
+	  setTimeout(function(){newWin.close();},10);
+}
+</script>
+</body>
+
+</html>
